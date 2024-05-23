@@ -1,0 +1,1105 @@
+*{
+    
+    transition: all .2s linear;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html{
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+}
+body{
+    overflow-x: hidden;
+}
+ .roboto-light-italic {
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+
+  
+.dark-overlay{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: rgba(0,0,0, .3);
+	
+}
+header{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 1rem 1rem;
+   background: white;  
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+nav ul li{
+    margin: 0rem 1rem;
+}
+nav ul li a {
+    font-size: 2rem;
+    text-decoration: none;
+    color: gray;
+    padding: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(169, 187, 198);
+    text-underline-offset: 0.5rem;
+   
+}
+
+nav ul li button {
+    border: none;
+    background-color: transparent;
+    font-size: 2rem;
+    text-decoration: none;
+    color: gray;
+    padding: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color: rgb(169, 187, 198);
+    text-underline-offset: 0.5rem;
+}
+
+nav ul li a:hover {
+    background: rgb(169, 187, 198);
+}
+
+.fa-solid.fa-bars{
+  
+    font-size: 4rem;
+    color:  grey;
+    cursor: pointer;
+    margin: 0 2rem;
+    z-index: 20;
+    display: none;
+} 
+.logo{
+    margin: 0 0rem;
+}
+img{
+    height: 50px;
+} 
+#home{
+       height: 100vh;
+      width: 100%; 
+}
+.banner{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.left-column,.right-column{
+    flex-basis: 50%;
+}
+.right-column img{
+    margin-top: 60px;
+    width: 100%;
+   height: 100%;
+
+	background-size: cover;
+    border-radius: 25px;
+}
+.left-column h1{
+    margin-top: 250px;
+    font-size: 80px;
+    color:  rgb(169, 187, 198);
+    
+    
+}
+.left-column h3{
+    font-size: 25px;
+    color:  rgb(169, 187, 198);
+
+}
+span{
+    color: gray;
+}
+.left-column p{
+    font-size: 14px;
+    color: gray;
+    margin: 50px 0;
+}
+.botn button{
+    padding: 7px 30px;
+    margin-right: 15px;
+    outline: none;
+    border: 1px solid grey;
+    border-radius: 25px;
+    cursor: pointer;
+    color: rgb(169, 187, 198);
+    background: transparent;
+}
+.botn .primary-btn{
+    background: linear-gradient(grey,  rgb(169, 187, 198));
+   
+    color: white;
+}
+
+
+.fa-times{
+    transform: rotateZ('180deg');
+} 
+
+
+@media (max-width:991px){
+    html{
+        font-size: 50%;
+    }
+}
+@media (max-width:768px){
+    html{
+        font-size: 40%;
+    }
+}
+/* media for header */
+@media (max-width:620px){
+    
+header{
+    .fa-solid.fa-bars{
+        display: block;
+    }
+    
+    nav{
+        position: fixed;
+        top: 0;
+        left: -200%;
+        height: 100vh;
+        width: 65vw;
+        background: white;
+        box-shadow: 31rem 0 0 rgba(0,0,0, .3);
+        
+
+        ul{
+            height: 100%;
+            flex-flow: column;
+            justify-content: center;
+
+            li{
+                 margin: 2rem 0; 
+
+                a{
+                    margin: 0;
+                    font-size: 4rem;
+                    color: rgb(169, 187, 198);
+
+                    &:hover{
+                        background: grey;
+                    }
+                }
+                    
+                 button{
+                    margin: 0;
+                    font-size: 4rem;
+                    color: rgb(169, 187, 198);
+
+                    &:hover{
+                        background: grey;
+                   } 
+             }
+         }
+    }
+}
+.nav-toggle{
+    left: 0;
+}
+}
+}
+/* media for home */
+@media screen and (max-width: 680px) {
+    .banner {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+  
+    .left-column,
+    .right-column {
+      flex-basis: 100%;
+    }
+  
+    left-column h1 {
+      margin-top: 30px;
+      font-size: 30px;
+    }
+  
+    .left-column h3 {
+      font-size: 16px;
+    }
+  
+    .left-column p {
+      font-size: 10px;
+      margin: 20px 0;
+    }
+  }
+
+ 
+/* About */
+.heading{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+   
+}
+ .headingA{
+	font-size: 36px;
+	font-weight: 600;
+	color: grey;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color:  rgb(169, 187, 198);
+    text-underline-offset: -1.4rem; 
+
+
+}
+.about-p{
+	color: black;
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 22px;
+	padding: 10px;
+}
+.container{
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px 20px;
+}
+.about{
+	display: flex;
+	justify-content: space-between;
+}
+.about-image{
+	flex: 1;
+	margin-right: 40px;
+	overflow: hidden;
+}
+.about-image img{
+    border-radius: 20px;
+	width: 100%;
+	height: auto;
+	display: block;
+	transition: 0.5s ease;
+	
+	
+} 
+.about-image:hover img{
+	transform: scale(1.2);
+}
+
+.about-content {
+	padding-top: 7%;
+	flex: 1;
+	
+}
+.about-content h2{
+	color: grey;
+	font-size: 23px;
+	margin-bottom: 15px;
+
+}
+.about-content p{
+	font-size: 18px;
+	line-height: 1.5;
+}
+ .about-content .Take-quiz{
+    display: inline-block; 
+    padding: 10px 20px;
+    background-color: grey;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 15px;
+    transition: 0.5s ease;
+    border: 2px solid white;
+    margin-right: 10px;
+
+} 
+ .about-content .Take-quiz:hover{
+	background-color: rgb(169, 187, 198);
+}  
+.social-iconsss .fa-brands {
+    width: 40px;
+    height: 40px; 
+    border-radius: 50%;
+    text-align: center; 
+    line-height: 40px;
+    font-size: 20px; 
+    color: rgb(169, 187, 198);
+    background:  gray;
+    margin-top: 10px;
+    margin-right: 15px; 
+    cursor: pointer;
+} 
+/* media for about us page */
+@media (max-width: 620px){
+	.heading{
+		
+            padding-top: 50px;
+	}
+	.heading h1{
+		font-size: 36px;
+		
+	}
+	.heading P{
+		font-size: 17PX;
+		margin-bottom: 0PX;
+	}
+	.container{
+		padding: 0px;
+	}
+	.about{
+		padding: 20px;
+		flex-direction: column;
+	}
+	.about-image{
+		margin-right: 0px;
+		margin-bottom: 20px;
+
+	}
+	.about-content p{
+		padding: 0px;
+		font-size: 16px;
+	}
+	.about-content .Take-quiz{
+		font-size: 16PX;
+	}
+
+	
+}
+/* login */
+ #log-page{
+    margin-top: 10rem;
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+	background-size: cover;
+    
+    background-image: url(image/background.jpg);
+    
+} 
+.login-hading{
+    font-size: 36px;
+    font-weight: 600;
+    color: grey;
+    width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color:  rgb(169, 187, 198);
+    text-underline-offset: -1.4rem; 
+}
+.form-box
+{
+    
+    width: 380px;
+	height: 500px;
+     position: relative; 
+    margin: 2% auto; 
+    background: rgb(169, 187, 198); 
+    padding: 10px; 
+    overflow: hidden; 
+ }     
+ /* the grey color around login register button                      */
+ .button-box
+{
+	width:220px;
+	margin:35px auto;
+	position:relative;
+	box-shadow:  5px 5px 15px rgba(100, 100, 100, 0.5);
+    border-radius: 30px;
+}    
+
+.toggle-btn
+{
+	padding:10px 30px;
+	cursor:pointer;
+	background: transparent;
+	border:0;
+	outline: none;
+	position: relative;
+    color: white;
+}
+
+#btn
+{
+	top: 0;
+	left:0;
+	position: absolute;
+	width: 110px;
+	height: 100%;
+	background: gray;
+	border-radius: 30px;
+	transition: color .5s;
+    color: white;
+}
+
+ .input-group-login
+{
+	top: 150px;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+    
+} 
+.input-group-register
+{
+    top: 120px;
+	position:absolute;
+	width:280px;
+	transition:.5s;
+    
+}
+ .input-field
+{
+    
+	width: 100%;
+	padding:10px 0;
+	margin:5px 0;
+	border-left:0;
+	border-top:0;
+	border-right:0;
+	border-bottom: 1px solid black;
+	outline:none;
+	background: transparent;
+    
+    
+} 
+
+ .submit-btn
+{
+	width: 85%;
+	padding: 10px 30px;
+	cursor: pointer;
+	display: block;
+	margin: auto;
+	background: gray;
+	border: 0;
+	outline: none;
+	border-radius: 30px;
+   color: white;
+} 
+.check-box
+{
+	margin: 30px 10px 34px 0;
+    
+}
+.span1
+{
+	color: black;
+	font-size:12px;
+	bottom:68px;
+	position:absolute;
+}
+ #login
+{
+	left:50px;
+    
+} 
+#login input
+{
+	color: black;
+	font-size:15px;
+}
+#register
+{
+	left:450px;
+}
+#register input
+{
+	color: black;
+	font-size: 15px;
+}  
+
+/* Quiz */
+
+/* #quiz {
+    background:blue;
+	box-sizing: border-box;
+    height: 100%;
+  }
+
+  #quiz .quiz-hea{
+    font-size: 36px;
+    font-weight: 600;
+    padding-top: 100px;
+    text-align: center;
+    width: 80%;
+	margin: auto;
+    color: gray;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color:  rgb(169, 187, 198);
+    text-underline-offset: -1.4rem; 
+  } 
+  .app{
+	
+	background: grey;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 10px;
+	 padding: 30px; 
+}
+  
+  
+  .question {
+   
+    margin-bottom: 20px;
+    background: grey;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 10px;
+	padding: 30px;
+  }
+  .question p{
+    font-size: 20px;
+	color: white;
+	font-weight: 600;
+  }
+  .question label{
+    font-size: 20px;
+	color: rgb(169, 187, 198);
+	font-weight: 600;
+  }
+  
+ 
+  input[type="radio"] {
+    margin-right: 10px;
+    background-color: aqua;
+    
+  }
+  
+  
+ .button1 {
+    background: rgb(169, 187, 198);
+	color: gray;
+	font-weight: 500;
+    font-size: 15px;
+	width: 150px;
+	border: 2px solid grey;
+	padding: 10px;
+	margin: 20px auto 0;
+	border-radius: 4px;
+	cursor: pointer;
+  } 
+  
+  .button1:hover {
+    background-color: white;
+  } 
+
+  #result h2{
+    color:  rgb(169, 187, 198);
+    font-size: 20px;
+  }
+
+   #result p{
+    color: grey;
+    font-size: 15px;
+    margin-right: 29px;
+  }
+
+  
+  
+  #result {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+
+
+@media (max-width: 620px) {
+    .app {
+        width: 65%;
+        margin: 20px auto 0;
+        padding: 10px;
+    }
+
+    .app h2 {
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+
+    .quiz h3 {
+        font-size: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #next-btn {
+        width: 30%;
+        font-size: 16px;
+        padding: 12px;
+        margin: 15px auto 0;
+    }
+} */
+
+/* Routine */
+/* .skin-heading{
+    font-size: 18px;
+    font-weight: 600;
+    color: grey;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color:  rgb(169, 187, 198);
+    text-underline-offset: -1.4rem; 
+	
+}
+.index-category{
+	width: 100%;
+	 padding: 30px 0px; 
+	background-color:  rgb(169, 187, 198);
+	display: flex;
+	justify-content: center;
+	column-gap: 100px;
+
+
+}
+.index-category-box{
+	width: 150px;
+	height: 150px;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+}
+.index-category-box:nth-child(1){
+    background-image: url(image/cleanser--images.jpg);
+	
+	
+}
+.index-category-box:nth-child(2){
+    background-image: url(image/moisturizer.jpg);
+	
+	
+}
+.index-category-box:nth-child(3){
+    background-image: url(image/serum.jpg);
+	
+	
+}
+.index-category-box:nth-child(4){
+    background-image: url(image/sunscreen.jpg);
+	
+	
+}
+.dark-overlay{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.5;
+	transition: all ease-in-out 200ms;
+}
+.index-category-box:hover .dark-overlay {
+	 opacity: 0;
+}
+
+.index-category-box h3{
+	font-size: 20px;
+	line-height: 24px;
+	color: #fff;
+	text-align: center;
+	text-shadow: -2px 2px 4px black;
+ 
+
+}
+ .skin-headings{
+    font-size: 18px;
+   font-weight: 600; 
+    color: grey;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	 padding-top: 10px; 
+     letter-spacing: 1rem;
+     text-decoration: underline;
+     text-decoration-style: solid;
+     text-decoration-color:  rgb(169, 187, 198);
+     text-underline-offset: -1.4rem; 
+
+} 
+
+ .index-category-box-preview{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}   
+.index-category-box-preview .background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1; 
+} 
+.index-category-box-preview .preview{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    background-color: grey;
+    position: relative;
+    margin: 2rem; 
+    width: 42rem;
+    z-index: 2;
+}
+.index-category-box-preview .preview.active{
+    display: inline-block;
+
+} 
+.index-category-box-preview .preview img{ 
+    height: 20rem;
+    background-color:  rgb(169, 187, 198);
+  }    
+
+
+
+
+ .index-category-box-preview .preview .fa-times{
+     position: absolute;
+     top: 1rem;
+     right: 1.5rem;
+     cursor: pointer;
+     color: white;
+     font-size: 4rem;
+}   
+.index-category-box-preview .preview .fa-times:hover{
+  transform: rotate('90deg');
+}  
+.preview h2 {
+    font-size: 3rem;
+    color: white;
+  } 
+ .category-details h3{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  } 
+.index-category-box-preview .brands-list li{
+      padding-left: 0; 
+      list-style: none;
+      font-size: 1.5rem;
+      color: rgb(169, 187, 198);
+      text-align: center;
+    
+  } 
+ .index-category-box-preview .ingredients-list li{
+    padding-left: 0; 
+    list-style: none; 
+    font-size: 1.5rem;
+      color: rgb(169, 187, 198);
+      text-align: center;
+    
+} 
+.apply-routine h3 {
+    font-size: 2rem;
+    color: white;
+  } 
+ .apply-routine p{
+    font-size: 1.5rem;
+    color: rgb(169, 187, 198);
+ }   
+
+
+@media (max-width: 620px) {
+    .skin-heading,
+    .skin-headings {
+        width: 90%;
+        padding-top: 50px;
+    }
+
+    .index-category {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .index-category-box {
+        width: 80%;
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .index-category-box:nth-child(1) {
+        background-image: url(image/cleanser--images.jpg);
+    }
+
+    .index-category-box:nth-child(2) {
+        background-image: url(image/moisturizer.jpg);
+    }
+
+    .index-category-box:nth-child(3) {
+        background-image: url(image/serum.jpg);
+    }
+
+    .index-category-box:nth-child(4) {
+        background-image: url(image/sunscreen.jpg);
+    }
+
+    .index-category-box h3 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+} */
+
+ 
+/* Actives */
+.actives{
+	min-height: 100vh;
+}
+.headings{
+    font-size: 36px;
+    font-weight: 600;
+    color: grey;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	 padding-top: 100px; 
+     letter-spacing: 1rem;
+     text-decoration: underline;
+     text-decoration-style: solid;
+     text-decoration-color:  rgb(169, 187, 198);
+     text-underline-offset: -1.4rem; 
+
+
+}
+.box-container{
+	width: 90%;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap; 
+	
+}
+.box-container .box{
+	height: 25rem;
+	width: 25rem;
+	box-shadow: 0 .2rem .5rem rgba(0,0,0, .3);
+	border-left: .5rem solid white;
+	border-right: .5rem solid white;
+	border-radius: .5rem;
+	 text-align: center;
+	padding-top: 4rem; 
+     margin: 1rem 1rem;
+	 background-color: grey;
+}
+.box-container .box h2{
+	color:  white
+    ;
+    font-size: 18px;
+    margin-bottom: 30px ;
+
+
+}
+.box-container .box li{
+	color:  rgb(169, 187, 198);
+	font-size: 15px;
+	/* margin: 2rem 1rem; */
+}
+@media (max-width: 620px) {
+    .headings {
+        padding-top: 50px;
+    }
+
+    .box-container {
+        width: 65%;
+        margin-left: 15%;
+    }
+
+    .box-container .box {
+        height: auto;
+        width: 65%;
+        margin: 1rem;
+         padding-top: 10rem; 
+         padding-bottom: 10rem;
+        
+    }
+
+    .box-container .box h2 {
+        font-size: 18px; /* Adjust heading font size */
+    }
+
+    .box-container .box li {
+        font-size: 15px; /* Adjust list item font size */
+        /* margin: 1rem 0;  Adjust margin for list items  */
+    }
+}
+
+/* footer */
+
+footer{
+    width: 100%;
+   position: relative;
+   bottom: 0;
+   background: rgb(169, 187, 198);
+   color: #fff;
+   padding: 100px 0 30px;
+   border-top-left-radius: 125px;
+   font-size: 13px;
+   line-height: 20px;
+
+}
+ .row{
+    width: 85%;  
+     margin: auto; 
+    display: flex;
+     /* column-gap: 5px;  */
+    flex-wrap: wrap;
+    align-items: flex-start;
+     justify-content: space-between; 
+
+}
+.col{
+    flex-basis: 25%;
+    padding: 10px;
+}
+.col:nth-child(2), .col:nth-child(3){
+    flex-basis: 15%;
+}
+.col p{
+    font-size: 13px;
+    color: grey;
+    font-weight: 600;
+}
+.logo1{
+    width: 80px;
+    margin-bottom: 30px;
+}
+.email-id{
+    margin-top: 12px;
+    width: fit-content;
+    border-bottom: 1px solid gray;
+    margin: 20px solid;
+}
+.col h4{
+    margin-top: 12px;
+    color: grey;
+}
+  .col h3{
+    font-size: 18px;
+    color: white;
+
+}
+.footer-nav li{
+    list-style: none;
+   
+    margin-top: 12px;
+}
+.footer-nav li a{
+    text-decoration: none;
+    color: grey;
+    font-weight: 600;
+}   
+.footer-form{
+    margin-top: 12px;
+    padding-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+    margin-bottom: 50px;
+} 
+.footer-form .fa{
+    font-size: 18px;
+    margin-right: 10px;
+}
+.footer-form input{
+    
+    width: 100%;
+    background: transparent;
+    color: #fff;
+    border: 0;
+    outline: none;
+}
+.footer-form button{
+    background: transparent;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    color: white;
+    font-size: 16px;
+}
+.social-icons .fa-brands {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 20px;
+    color: white;
+    background: gray;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.underline{
+    width: 50%;
+    height: 2px;
+    background: #fff;
+    /* border-radius: 3px; */
+    position: relative;
+    top: 5px;
+    left: 0;
+}
+
+/* media for footer */
+
+@media (max-width: 620px){
+    footer{
+        bottom: unset;
+    }
+    .col{
+        flex-basis: 100%;
+       
+    }
+    .col:nth-child(2), .col:nth-child(3){
+        flex-basis: 100%;
+    }
+}

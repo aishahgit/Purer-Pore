@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purer Pores</title>
+    <link rel="stylesheet" href="styling.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> 
+   
+   
+       
+       <script
+       src="https://code.jquery.com/jquery-3.7.1.min.js"
+       integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+       crossorigin="anonymous"></script>
+
+    <style>
+    html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    }
+    #container {
+            background-image: url(image/quiz3.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+        }
+     #quiz {
+   
+	box-sizing: border-box;
+    height: 100%;
+  }
+
+  #quiz .quiz-hea{
+    font-size: 36px;
+    font-weight: 600;
+    padding-top: 100px;
+    text-align: center;
+    width: 80%;
+	margin: auto;
+    color: gray;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color:  rgb(169, 187, 198);
+    text-underline-offset: -1.4rem; 
+  } 
+  .app{
+	
+	background: grey;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 10px;
+	 padding: 30px; 
+}
+  
+  
+  .question {
+   
+    margin-bottom: 20px;
+    background: grey;
+	width: 90%;
+	max-width: 600px;
+	margin: 50px auto 0;
+	border-radius: 10px;
+	padding: 30px;
+  }
+  .question p{
+    font-size: 20px;
+	color: white;
+	font-weight: 600;
+  }
+  .question label{
+    font-size: 20px;
+	color: rgb(169, 187, 198);
+	font-weight: 600;
+  }
+  
+  
+  input[type="radio"] {
+    margin-right: 10px;
+    background-color: aqua;
+    
+  }
+  
+  
+ .button1 {
+    background: rgb(169, 187, 198);
+	color: gray;
+	font-weight: 500;
+    font-size: 15px;
+	width: 150px;
+	border: 2px solid grey;
+	padding: 10px;
+	margin: 20px auto 0;
+	border-radius: 4px;
+	cursor: pointer;
+  } 
+  
+  .button1:hover {
+    background-color: white;
+  } 
+
+  #result h2{
+    color:  rgb(169, 187, 198);
+    font-size: 20px;
+  }
+
+   #result p{
+    color: grey;
+    font-size: 15px;
+    margin-right: 29px;
+  }
+
+  
+  
+  #result {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+  }
+
+
+
+@media (max-width: 620px) {
+    .app {
+        width: 65%;
+        margin: 20px auto 0;
+        padding: 10px;
+    }
+
+    .app h2 {
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+
+    .quiz h3 {
+        font-size: 15px;
+    }
+
+    .btn {
+        width: 100%;
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    #next-btn {
+        width: 30%;
+        font-size: 16px;
+        padding: 12px;
+        margin: 15px auto 0;
+    }
+}
+/* Routine */
+.skin-heading{
+    font-size: 18px;
+    font-weight: 600;
+    color: grey;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	padding-top: 100px;
+    letter-spacing: 1rem;
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-color:  rgb(169, 187, 198);
+    text-underline-offset: -1.4rem; 
+	
+}
+.index-category{
+	width: 100%;
+	 padding: 30px 0px; 
+	background-color:  rgb(169, 187, 198);
+	display: flex;
+	justify-content: center;
+	column-gap: 100px;
+
+
+}
+.index-category-box{
+	width: 150px;
+	height: 150px;
+	background-color: black;
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+}
+.index-category-box:nth-child(1){
+    background-image: url(image/cleanser--images.jpg);
+	
+	
+}
+.index-category-box:nth-child(2){
+    background-image: url(image/moisturizer.jpg);
+	
+	
+}
+.index-category-box:nth-child(3){
+    background-image: url(image/serum.jpg);
+	
+	
+}
+.index-category-box:nth-child(4){
+    background-image: url(image/sunscreen.jpg);
+	
+	
+}
+.dark-overlay{
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: black;
+	opacity: 0.5;
+	transition: all ease-in-out 200ms;
+}
+.index-category-box:hover .dark-overlay {
+	 opacity: 0;
+}
+
+.index-category-box h3{
+	font-size: 20px;
+	line-height: 24px;
+	color: #fff;
+	text-align: center;
+	text-shadow: -2px 2px 4px black;
+    
+
+}
+ .skin-headings{
+    font-size: 18px;
+   font-weight: 600; 
+    color: grey;
+	width: 80%;
+	margin: auto;
+	text-align: center;
+	 padding-top: 10px; 
+     letter-spacing: 1rem;
+     text-decoration: underline;
+     text-decoration-style: solid;
+     text-decoration-color:  rgb(169, 187, 198);
+     text-underline-offset: -1.4rem; 
+
+} 
+
+ .index-category-box-preview{
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}   
+.index-category-box-preview .background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1; 
+} 
+.index-category-box-preview .preview{
+    display: none;
+    padding: 2rem;
+    text-align: center;
+    background-color: grey;
+    position: relative;
+    margin: 2rem; 
+    width: 42rem;
+    z-index: 2;
+}
+.index-category-box-preview .preview.active{
+    display: inline-block;
+
+} 
+.index-category-box-preview .preview img{ 
+    height: 20rem;
+    background-color:  rgb(169, 187, 198);
+  }    
+
+
+
+
+ .index-category-box-preview .preview .fa-times{
+     position: absolute;
+     top: 1rem;
+     right: 1.5rem;
+     cursor: pointer;
+     color: white;
+     font-size: 4rem;
+}   
+.index-category-box-preview .preview .fa-times:hover{
+  transform: rotate('90deg');
+}  
+.preview h2 {
+    font-size: 3rem;
+    color: white;
+  } 
+ .category-details h3{
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+  } 
+.index-category-box-preview .brands-list li{
+      padding-left: 0; 
+      list-style: none;
+      font-size: 1.5rem;
+      color: rgb(169, 187, 198);
+      text-align: center;
+    
+  } 
+ .index-category-box-preview .ingredients-list li{
+    padding-left: 0; 
+    list-style: none; 
+    font-size: 1.5rem;
+      color: rgb(169, 187, 198);
+      text-align: center;
+    
+} 
+.apply-routine h3 {
+    font-size: 2rem;
+    color: white;
+  } 
+ .apply-routine p{
+    font-size: 1.5rem;
+    color: rgb(169, 187, 198);
+ }   
+
+
+@media (max-width: 620px) {
+    .skin-heading,
+    .skin-headings {
+        width: 90%;
+        padding-top: 50px;
+    }
+
+    .index-category {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+    }
+
+    .index-category-box {
+        width: 80%;
+        max-width: 200px;
+        height: 200px;
+        margin-bottom: 20px;
+    }
+
+    .index-category-box:nth-child(1) {
+        background-image: url(image/cleanser--images.jpg);
+    }
+
+    .index-category-box:nth-child(2) {
+        background-image: url(image/moisturizer.jpg);
+    }
+
+    .index-category-box:nth-child(3) {
+        background-image: url(image/serum.jpg);
+    }
+
+    .index-category-box:nth-child(4) {
+        background-image: url(image/sunscreen.jpg);
+    }
+
+    .index-category-box h3 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
+    </style>
+</head>
+<body>
+    <div id="container">
+    <div id="quiz">
+        <h1 class="quiz-hea">Skincare Quiz</h1>
+        
+        <div class="question">
+            <p>What is the natural state of your skin?</p>
+            <label><input type="radio" name="skinState" value="oily">Oily</label><br>
+            <label><input type="radio" name="skinState" value="combination">Combination</label><br>
+            <label><input type="radio" name="skinState" value="dry">Dry</label><br>
+             <button class="button1" onclick="nextQuestion()">Next</button>
+        </div>
+    
+        <div class="question" style="display: none;">
+            <p>What main concerns do you face with your skin?</p>
+            <label><input type="radio" name="skinConcerns" value="acne">Acne</label><br>
+            <label><input type="radio" name="skinConcerns" value="acneTZone">Acne in T-zone</label><br>
+            <label><input type="radio" name="skinConcerns" value="dryness">Dryness</label><br>
+             <button class="button1" onclick="showResult()">Show Result</button> 
+            <div id="result" style="display: none;">
+                <h2>Recommended Skincare Routine:</h2>
+                <p id="skincareRoutine"></p>
+            </div>
+    
+        </div>
+        </div>
+    <!-- routine -->
+     <div id="Routine" class="skin-heading">
+            <h1>Oily Skin</h1>
+        </div>
+        
+            <section class="index-category">
+            <a href="#" class="index-category-box" data-name="p-1">
+                <div class="dark-overlay"></div>
+                <h3>Cleanser</h3>
+               
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-2">
+                <div class="dark-overlay"></div>
+                <h3>Moisturizer</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-3">
+                <div class="dark-overlay"></div>
+                <h3>Serum</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-4">
+                <div class="dark-overlay"></div>
+                <h3>Sunscreenr</h3>
+               
+            </a>
+        </section>
+        <div class="skin-headings">
+            <h1>Combination Skin</h1>
+        </div>
+        <section class="index-category">
+            <a href="#" class="index-category-box" data-name="p-5">
+                <div class="dark-overlay"></div>
+                <h3>Cleanser</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-6">
+                <div class="dark-overlay"></div>
+                <h3>Moisturizer</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-7">
+                <div class="dark-overlay"></div>
+                <h3>Serum</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-8">
+                <div class="dark-overlay"></div>
+                <h3>Sunscreenr</h3>
+               
+            </a>
+        </section>
+        <div class="skin-headings">
+            <h1>Dry Skin</h1>
+        </div>
+        <section class="index-category">
+            <a href="#" class="index-category-box" data-name="p-9">
+                <div class="dark-overlay"></div>
+                <h3>Cleanser</h3>
+        
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-10">
+                <div class="dark-overlay"></div>
+                <h3>Moisturizer</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-11">
+                <div class="dark-overlay"></div>
+                <h3>Serum</h3>
+               
+            </a>
+            <a href="#" class="index-category-box" data-name="p-12">
+                <div class="dark-overlay"></div>
+                <h3>Sunscreenr</h3>
+               
+            </a>
+        </section>
+        
+        <div class="index-category-box-preview">
+             <div class="background-overlay"></div> 
+            <div class="preview" data-target="p-1">
+                <i class="fas fa-times"></i>
+                <h2>Cleanser</h2>
+                <img src="image/cleanser--images.jpg" alt="">
+                <div class="category-details">
+                    <h3>Best Brands for Cleanser for Oily skin</h3>
+                    <ul class="brands-list">
+                        <li>Simple</li>
+                        <li>Nat Habit</li>
+                        <li>Dr.Sheth's</li>
+                        <li>Neutrogena</li>
+                        <li>Vcare</li>
+                        <li>FIXDERMA</li>
+                        <li>RE-EQUIL</li>
+                        <li>Minimalist</li>
+                       
+                    </ul>
+                </div>
+                <div class="category-details">
+                    <h3>Ingredients to Seek</h3>
+                    <ul class="ingredients-list">
+                        <li>Salicylic Acid</li>
+                        <li>Glycolic Acid</li>
+                        <li>Niacinamide (Vitamin B3)</li>
+                        <li>Clay</li>
+                        <li>Tea Tree Oil</li>
+                      
+                    </ul>
+                </div>
+                <div class="apply-routine">
+                    <h3>Routine</h3>
+                    <p>It's recommended to cleanse oily skin twice a day, in the morning and evening.</p>
+                </div>
+            </div>
+        </div>
+        
+         <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+            <div class="preview" data-target="p-2">
+                <i class="fas fa-times"></i>
+                <h2>Moisturizer</h2>
+                <img src="image/moisturizer.jpg" alt="">
+                <div class="category-details">
+                    <h3>Best Brands for  Moisturizer for Oily skin</h3>
+                    <ul class="brands-list">
+                        <li>Pilgrim</li>
+                        <li>Dr.Sheth's</li>
+                        <li>Aqualogica</li>
+                        <li>Ponds</li>
+                        <li>plum</li>
+                        <li>Lacto Calamine</li>
+                        <li>COS-IQ</li>
+                        <li>The derma Co</li>
+                    </ul>
+                </div>
+                <div class="category-details">
+                    <h3>Ingredients to Seek</h3>
+                    <ul class="ingredients-list">
+                        <li>Hyalouronic Acid</li>
+                        <li>Glycerin</li>
+                        <li>Niacinamide</li>
+                        <li>Cucumber Extract</li>
+                    </ul>
+                </div>
+                <div class="apply-routine">
+                    <h3>Routine</h3>
+                    <p>Apply moisturizer twice a day after cleansing.</p>
+                </div>
+            </div>
+        </div> 
+        
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+            <div class="preview" data-target="p-3">
+                <i class="fas fa-times"></i>
+                <h2>Serum</h2>
+                <img src="image/serum.jpg" alt="">
+                <div class="category-details">
+                    <h3>Best Brands for Serum for Oily skin</h3>
+                    <ul class="brands-list">
+                        <li>Minimalist</li>
+                        <li>FoxTale</li>
+                        <li>The Derma Co</li>
+                        <li>UrbanBotanics</li>
+                        <li>Pilgrim</li>
+                        <li>L'Oreal Paris</li>
+                        <li>Earth Rhythm</li>
+                        <li>mcaffeine</li>
+                    </ul>
+                </div>
+                <div class="category-details">
+                    <h3>Ingredients to Seek</h3>
+                    <ul class="ingredients-list">
+                        <li>Hyalouronic Acid</li>
+                        <li>Niacinamide</li>
+                        <li>Salicylic Acid</li>
+                        <li>Matte Finish Agents</li>
+                        <!-- Add more ingredients as needed -->
+                    </ul>
+                </div>
+                <div class="apply-routine">
+                    <h3>Routine</h3>
+                    <p>Use serum once a day preferrably at night time.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+            <div class="preview" data-target="p-4">
+                <i class="fas fa-times"></i>
+                <h2>Sunscreen</h2>
+                <img src="image/sunscreen.jpg" alt="">
+                <div class="category-details">
+                    <h3>Best Brands for Sunscreen for Oily skin</h3>
+                    <ul class="brands-list">
+                        <li>Brinton</li>
+                        <li>The Derma Co</li>
+                        <li>Aqualogica</li>
+                        <li>FIXDERMA</li>
+                        <li>DOT & KEY</li>
+                        <li>Lacto Calamine</li>
+                        <li>RE' EQUIL</li>
+                        <li>Lotus Herbals</li>
+                        <!-- Add more brands as needed -->
+                    </ul>
+                </div>
+                <div class="category-details">
+                    <h3>Ingredients to Seek</h3>
+                    <ul class="ingredients-list">
+                        <li>Non-comedogenic Formulas</li>
+                        <li>Mineral Filters</li>
+                        <li>Gel or Lightweight Formulas</li>
+                        <li>Matte Finish Agents</li>
+                        
+                    </ul>
+                </div>
+                <div class="apply-routine">
+                    <h3>Routine</h3>
+                    <p>Apply sunscreen after every 2-3 hours.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-5">
+               <i class="fas fa-times"></i>
+               <h2>Cleanser</h2>
+               <img src="image/cleanser--images.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Cleanser for Combination skin</h3>
+                   <ul class="brands-list">
+                       <li>La Roche-Posay</li>
+                       <li>cetaphil</li>
+                       <li>Mario Badescu</li>
+                       <li>Neutrogena</li>
+                       <li>First Aid Beauty</li>
+                       <li>CeraVe</li>
+                       <li>CeraVe</li>
+                       <li>Garnier</li>
+                       
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                       <li>Sodium Cocoyl Isethionate</li>
+                       <li>chamomile</li>
+                       <li>aloe vera</li>
+                       <li>Salicylic Acid</li>
+                       <li>Hyaluronic Acid</li>
+                       
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>It's recommended to cleanse Combination skin twice a day, in the morning and evening.</p>
+               </div>
+           </div>
+        </div>
+        
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-6">
+               <i class="fas fa-times"></i>
+               <h2>Moisturizer</h2>
+               <img src="image/moisturizer.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Moisturizer for Combination skin</h3>
+                   <ul class="brands-list">
+                       <li>Bioderma</li>
+                       <li>Aveeno</li>
+                       <li>Keihl's</li>
+                       <li>Neutrogena</li>
+                       <li>La Roche-Posay</li>
+                       <li>Clinique</li>
+                       <li>CeraVe</li>
+                       <li>First Aid Beauty</li>
+                   
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                       <li>Hyaluronic Acid</li>
+                       <li>Ceramides</li>
+                       <li>vitamin C</li>
+                       <li>Aloe Vera</li>
+                       <li>Niacinamide (Vitamin B3)</li>
+                   
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>Apply moisturizer twice a day after cleansing, and adjust as needed</p>
+               </div>
+           </div>
+        </div>
+        
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-7">
+               <i class="fas fa-times"></i>
+               <h2>Serum</h2>
+               <img src="image/serum.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Serum for Combinaation skin</h3>
+                   <ul class="brands-list">
+                       <li>The Ordinary</li>
+                       <li>Paula's Choice</li>
+                       <li>Caudalie</li>
+                       <li>Murad</li>
+                       <li>Drunk Elephant</li>
+                       <li>SkinCeuticals</li>
+                       <li>Glossier</li>
+                   
+                      
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                       <li>Salicylic Acid</li>
+                       <li>Honey Extract</li>
+                       <li>Centella Asiatica (Cica)</li>
+                       <li>Licorice Extrac</li>
+                    
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>Use serum once a day preferrably at night time.</p>
+               </div>
+           </div>
+        </div>
+        
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-8">
+               <i class="fas fa-times"></i>
+               <h2>Sunscreen</h2>
+               <img src="image/sunscreen.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Sunscreen for Combination skin</h3>
+                   <ul class="brands-list">
+                    <li>Brinton</li>
+                    <li>The Derma Co</li>
+                    <li>Aqualogica</li>
+                    <li>FIXDERMA</li>
+                    <li>DOT & KEY</li>
+                    <li>Lacto Calamine</li>
+                    <li>RE' EQUIL</li>
+                    <li>Lotus Herbals</li>
+                
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                    <li>Non-comedogenic Formulas</li>
+                    <li>Mineral Filters</li>
+                    <li>Gel or Lightweight Formulas</li>
+                    <li>Matte Finish Agents</li>
+                  
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>Apply sunscreen after every 2-3 hours.</p>
+               </div>
+           </div>
+        </div>
+
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-9">
+               <i class="fas fa-times"></i>
+               <h2>Cleanser</h2>
+               <img src="image/cleanser--images.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Cleanser for Dry skin</h3>
+                   <ul class="brands-list">
+                    <li>Cetaphil</li>
+                    <li>Cerave</li>
+                    <li>La Roche-Posay</li>
+                    <li>Aveeno</li>
+                    <li>Vanicream</li>
+                    <li>Neutrogena</li>
+                   
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                    <li>Hyaluronic Acid</li>
+                    <li>Glycerin</li>
+                    <li>Ceramides</li>
+                    <li>Shea Butter</li>
+                    <li>Oat Extract</li>
+                    <li>Coconut Oil</li>
+                    <li>Jojoba Oil</li>
+                    
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>For Dry skin it is recommended to cleanse only one a day.</p>
+               </div>
+           </div>
+        </div>
+
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-10">
+               <i class="fas fa-times"></i>
+               <h2>Moisturizer</h2>
+               <img src="image/moisturizer.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Moisturizer for Dry skin</h3>
+                   <ul class="brands-list">
+                       <li>Cetaphil</li>
+                       <li>Cerave</li>
+                       <li>La Roche-Posay</li>
+                       <li>Aveeno</li>
+                       <li>La Roche-Posay</li>
+                       <li>Clinique</li>
+                       <li>The Ordinaye</li>
+                       
+                       
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                       <li>Hyaluronic Acid</li>
+                       <li>Glycerin</li>
+                       <li>Ceramides</li>
+                       <li>Aloe Vera</li>
+                       <li>Niacinamide (Vitamin B3)</li>
+                       <li>Lactic</li>
+
+                    
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>Apply moisturizer twice or thrice as per the dryness level a day after cleansing, and adjust as needed</p>
+               </div>
+           </div>
+        </div>
+
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-11">
+               <i class="fas fa-times"></i>
+               <h2>Serum</h2>
+               <img src="image/serum.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Serum for Dry skin</h3>
+                   <ul class="brands-list">
+                       <li>Clinique:</li>
+                       <li>Drunk Elephant</li>
+                       <li>Caudalie</li>
+                       <li>Paula's Choice</li>
+                       <li>The Ordinary</li>
+                       <li>la Roche-Posay</li>
+                       
+                   
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                       <li>Hyaluronic Acid</li>
+                       <li>Glycerin</li>
+                       <li>Ceramides</li>
+                       <li>Botanical Oil</li>
+                
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>Use serum once a day preferrably at night time.</p>
+               </div>
+           </div>
+        </div>
+
+
+       
+
+        <div class="index-category-box-preview">
+            <div class="background-overlay"></div> 
+           <div class="preview" data-target="p-12">
+               <i class="fas fa-times"></i>
+               <h2>Sunscreen</h2>
+               <img src="image/sunscreen.jpg" alt="">
+               <div class="category-details">
+                   <h3>Best Brands for Sunscreen for Dry skin</h3>
+                   <ul class="brands-list">
+                    <li>CeraVe</li>
+                    <li>La Roche-Posay</li>
+                    <li>Aveeno</li>
+                    <li>Neutrogena</li>
+                    <li>EltaMD</li>
+                    <li>RE' EQUIL</li>
+                 
+                     
+                   </ul>
+               </div>
+               <div class="category-details">
+                   <h3>Ingredients to Seek</h3>
+                   <ul class="ingredients-list">
+                    <li>Hyaluronic Acid</li>
+                    <li>Glycerin</li>
+                    <li>Dimethicone</li>
+                    <li>Shea Butter</li>
+                   
+                   </ul>
+               </div>
+               <div class="apply-routine">
+                   <h3>Routine</h3>
+                   <p>Applu sunscreen after every 2-3 hours.</p>
+               </div>
+           </div>
+        </div>
+
+        
+          
+        
+ <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>  
+<script src="script.js"></script>     
+</body>
+</html>

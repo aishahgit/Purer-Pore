@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reg form</title>
+
+<style>
+        #log-page {
+            width: 100%;
+            height: 100vh;
+            background-position: center;
+            background-size: cover;
+            background-image: url(image/background.jpg);
+        }
+
+        .login-hading {
+            font-size: 36px;
+            font-weight: 600;
+            color: grey;
+            width: 80%;
+            margin: auto; 
+            text-align: center;
+            padding-top: 100px;
+            letter-spacing: 1rem;
+            text-decoration: underline;
+            text-decoration-style: solid;
+            text-decoration-color:  rgb(169, 187, 198);
+            text-underline-offset: -0.7rem; 
+        }
+
+        .form-box {
+            width: 380px;
+            height: 500px;
+            position: relative; 
+            margin: 1% auto; 
+            background: rgb(169, 187, 198); 
+            padding: 10px; 
+            overflow: hidden; 
+        }     
+
+        .button-box {
+            width: 220px;
+            margin: 35px auto;
+            position: relative;
+            box-shadow:  5px 5px 15px rgba(100, 100, 100, 0.5);
+            border-radius: 30px;
+        }    
+
+        .toggle-btn {
+            padding: 10px 30px;
+            cursor: pointer;
+            background: transparent;
+            border: 0;
+            outline: none;
+            position: relative;
+            color: white;
+        }
+
+        #btn {
+            top: 0;
+            left: 0;
+            position: absolute;
+            width: 110px;
+            height: 100%;
+            background: gray;
+            border-radius: 30px;
+            transition: color .5s;
+            color: white;
+        }
+
+        .input-group-register {
+            top: 120px;
+            left: 50px; /* Added left position */
+            position: absolute;
+            width: 280px;
+            transition: .5s;
+        }
+
+        .input-group-login {
+           top: 150px;
+           left: 450px; /* Added left position */
+           position: absolute;
+           width: 280px;
+           transition: .5s;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-left: 0;
+            border-top: 0;
+            border-right: 0;
+            border-bottom: 1px solid black;
+            outline: none;
+            background: transparent;
+        } 
+
+        .submit-btn {
+            width: 85%;
+            padding: 10px 30px;
+            cursor: pointer;
+            display: block;
+            margin: auto;
+            background: gray;
+            border: 0;
+            outline: none;
+            border-radius: 30px;
+            color: white;
+        }
+
+        .check-box {
+            margin: 30px 10px 34px 0;
+        }
+
+        .span1 {
+            color: black;
+            font-size: 12px;
+            bottom: 68px;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="log-page">
+        <h1 class="login-hading">Registration</h1>
+    
+        <div class="form-box">
+            <div class='button-box'>
+                <div id='btn'></div>
+                <!-- <button type='button' onclick='register()' class='toggle-btn'>Register</button>
+                <button type='button'onclick='login()'class='toggle-btn'>Log In</button> -->
+                <button type='button'onclick='register()'class='toggle-btn'>Register</button>
+                <button type='button'onclick='login()'class='toggle-btn'>Log In</button>
+        
+            </div>
+          
+     <form action="/regdata" method="POST"  id='register' class='input-group-register'>
+    <input type='text' name='firstName' class='input-field' placeholder='First Name' required>
+    <input type='text' name='lastName' class='input-field' placeholder='Last Name' required>
+    <input type='email' name='email' class='input-field' placeholder='Email Id' required>
+    <input type='password' name='password' class='input-field' placeholder='Enter Password' required>
+    <input type='password' name='cpassword' class='input-field' placeholder='Confirm Password'  required>
+    <input type='checkbox' class='check-box'><span class="span1">I agree to the terms and conditions</span>
+    <button type='submit' class='submit-btn'>Register</button>
+   </form>
+
+   <form action="/loginPage" method="POST" id='login' class='input-group-login'>
+    <input type='text' name='email' class='input-field' placeholder='Email Id' required>
+    <input type='password' name='loginpassword' class='input-field' placeholder='Enter Password' required>
+    <input type='checkbox' class='check-box'><span class="span1">Remember Password</span>
+    <button type='submit' class='submit-btn'>Log in</button>
+</form>
+</div>
+</div>  
+ <script>
+    var x=document.getElementById('register');
+    var y=document.getElementById('login');
+    var z=document.getElementById('btn');
+    function login()
+    {
+        x.style.left='-400px';
+        y.style.left='50px';
+        z.style.left='110px';
+    }
+    function register()
+    {
+        x.style.left='50px';
+        y.style.left='450px';
+        z.style.left='0px';
+    }
+</script>
+</body>
+</html>
